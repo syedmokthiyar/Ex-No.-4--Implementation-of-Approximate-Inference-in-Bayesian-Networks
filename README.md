@@ -51,7 +51,7 @@ edges=[('Burglary','Alarm'),('Earthquake','Alarm'),('Alarm','JohnCalls'),('Alarm
 G.add_nodes_from(nodes)
 G.add_edges_from(edges)
 pos={'Burglary':(0,0),'Earthquake':(2,0),'Alarm':(1,-2),'JohnCalls':(0,-4),'MaryCalls':(2,-4)}
-nx.draw(G,pos,with_labels=True,node_size=1500,node_color='skyblue',font_size=10,font_weight='bold',arrowsize=20)
+nx.draw(G,pos,with_labels=True,node_size=1500,node_color='pink',font_size=10,font_weight='bold',arrowsize=20)
 plt.title("Bayesian Network: Alarm Problem")
 plt.show()
 gibbs_sampler=GibbsSampling(network)
@@ -61,6 +61,7 @@ query_variable='Burglary'
 query_result=samples[query_variable].value_counts(normalize=True)
 print("\nApproximate Probabilities of {}:".format(query_variable))
 print(query_result)
+
 ```
 
 
